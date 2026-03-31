@@ -1,141 +1,132 @@
 import { useParams } from "react-router-dom";
-import { Container, Typography, Box, Divider } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  Divider,
+  Paper,
+} from "@mui/material";
 
-// Components
+// useState components
 import Counter from "../components/learning/react/useState/Counter";
 import InputBox from "../components/learning/react/useState/InputBox";
 import User from "../components/learning/react/useState/User";
+
+// props components
 import Profile from "../components/learning/react/props/Profile";
 import ButtonExample from "../components/learning/react/props/ButtonExample";
 import PropDrilling from "../components/learning/react/props/PropDrilling";
-import Card from "../components/learning/react/props/Card";
+import CardWrapper from "../components/learning/react/props/Card";
+
+const Section = ({ title, children }: any) => (
+  <Paper
+    elevation={2}
+    sx={{
+      p: 4,
+      borderRadius: 3,
+      mb: 4,
+      background: "#fff",
+    }}
+  >
+    <Typography variant="h5" fontWeight="bold" mb={2}>
+      {title}
+    </Typography>
+    {children}
+  </Paper>
+);
 
 const Topic = () => {
   const { id } = useParams();
 
-  if (id !== "react") {
-    return <Typography>Topic not found</Typography>;
-  }
-
   return (
-    <Container maxWidth="md" sx={{ py: 6 }}>
-      {/* Title */}
-      <Typography variant="h3" fontWeight="bold" gutterBottom>
-        useState
-      </Typography>
-
-      {/* 📘 Notes */}
-      <Box mb={4}>
-        <Typography variant="h5" gutterBottom>
-          📘 Notes
+    <Box
+      sx={{
+        minHeight: "100vh",
+        background: "#f8fafc",
+        py: 6,
+      }}
+    >
+      <Container maxWidth="md">
+        {/* TITLE */}
+        <Typography variant="h3" fontWeight="bold" mb={4}>
+          React Fundamentals
         </Typography>
 
-        <Typography>
-          - useState is used to manage state in functional components
-        </Typography>
-        <Typography>- State updates are asynchronous</Typography>
-        <Typography>- Functional updates prevent stale state issues</Typography>
-        <Typography>- Avoid storing derived state</Typography>
-      </Box>
-
-      <Divider sx={{ my: 4 }} />
-
-      {/* 🧪 Examples */}
-      <Box mb={4}>
-        <Typography variant="h5" gutterBottom>
-          🧪 Examples
+        {/* ================= useState ================= */}
+        <Typography variant="h4" mb={2}>
+          useState
         </Typography>
 
-        <Box mb={3}>
-          <Typography variant="subtitle1">Counter</Typography>
-          <Counter />
-        </Box>
+        <Section title="📘 Notes">
+          <Typography>• Manages component state</Typography>
+          <Typography>• Updates are async</Typography>
+          <Typography>• Use functional updates</Typography>
+        </Section>
 
-        <Box mb={3}>
-          <Typography variant="subtitle1">Controlled Input</Typography>
-          <InputBox />
-        </Box>
+        <Section title="🧪 Examples">
+          <Box mb={3}>
+            <Typography mb={1}>Counter</Typography>
+            <Counter />
+          </Box>
 
-        <Box mb={3}>
-          <Typography variant="subtitle1">Object State</Typography>
-          <User />
-        </Box>
-      </Box>
+          <Box mb={3}>
+            <Typography mb={1}>Input</Typography>
+            <InputBox />
+          </Box>
 
-      <Divider sx={{ my: 4 }} />
+          <Box>
+            <Typography mb={1}>User Object</Typography>
+            <User />
+          </Box>
+        </Section>
 
-      {/* ⚡ Key Points */}
-      <Box>
-        <Typography variant="h5" gutterBottom>
-          ⚡ Key Points
+        <Section title="⚡ Key Points">
+          <Typography>✔ Avoid stale state</Typography>
+          <Typography>✔ Do not mutate state</Typography>
+          <Typography>✔ Use spread operator</Typography>
+        </Section>
+
+        {/* ================= PROPS ================= */}
+        <Divider sx={{ my: 6 }} />
+
+        <Typography variant="h4" mb={2}>
+          Props
         </Typography>
 
-        <Typography>✔ State updates are async</Typography>
-        <Typography>✔ Always use functional updates when needed</Typography>
-        <Typography>✔ Do not mutate state directly</Typography>
-        <Typography>✔ Spread operator is important for objects</Typography>
-      </Box>
-      {/* ================= PROPS ================= */}
+        <Section title="📘 Notes">
+          <Typography>• Data flow parent → child</Typography>
+          <Typography>• Props are immutable</Typography>
+          <Typography>• Can pass functions</Typography>
+        </Section>
 
-      <Divider sx={{ my: 6 }} />
-
-      <Typography variant="h3" fontWeight="bold" gutterBottom>
-        Props
-      </Typography>
-
-      {/* 📘 Notes */}
-      <Box mb={4}>
-        <Typography variant="h5">📘 Notes</Typography>
-        <Typography>
-          - Props are used to pass data from parent to child
-        </Typography>
-        <Typography>- Props are read-only (immutable)</Typography>
-        <Typography>- You can pass functions as props</Typography>
-        <Typography>- Avoid prop drilling using Context API</Typography>
-      </Box>
-
-      <Divider sx={{ my: 4 }} />
-
-      {/* 🧪 Examples */}
-      <Box mb={4}>
-        <Typography variant="h5">🧪 Examples</Typography>
-
-        <Box mb={3}>
-          <Typography>Profile</Typography>
+        <Section title="🧪 Examples">
           <Profile name="Shahbaz" age={22} />
-        </Box>
 
-        <Box mb={3}>
-          <Typography>Button (Function Props)</Typography>
-          <ButtonExample label="Click Me" onClick={() => alert("Clicked!")} />
-        </Box>
+          <Box mt={2}>
+            <ButtonExample
+              label="Click Me"
+              onClick={() => alert("Clicked")}
+            />
+          </Box>
 
-        <Box mb={3}>
-          <Typography>Children Props</Typography>
-          <Card>
-            <Typography>This is inside Card</Typography>
-          </Card>
-        </Box>
+          <Box mt={2}>
+            <CardWrapper>
+              <Typography>This is children prop</Typography>
+            </CardWrapper>
+          </Box>
 
-        <Box mb={3}>
-          <Typography>Prop Drilling</Typography>
-          <PropDrilling />
-        </Box>
-      </Box>
+          <Box mt={2}>
+            <PropDrilling />
+          </Box>
+        </Section>
 
-      <Divider sx={{ my: 4 }} />
-
-      {/* ⚡ Key Points */}
-      <Box>
-        <Typography variant="h5">⚡ Key Points</Typography>
-        <Typography>✔ Props are read-only</Typography>
-        <Typography>✔ Used for component communication</Typography>
-        <Typography>
-          ✔ Function props allow child → parent interaction
-        </Typography>
-        <Typography>✔ Prop drilling is a real problem</Typography>
-      </Box>
-    </Container>
+        <Section title="⚡ Key Points">
+          <Typography>✔ Props are read-only</Typography>
+          <Typography>✔ Used for communication</Typography>
+          <Typography>✔ Avoid prop drilling</Typography>
+        </Section>
+      </Container>
+    </Box>
   );
 };
 

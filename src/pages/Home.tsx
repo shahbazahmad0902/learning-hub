@@ -7,75 +7,78 @@ import {
   CardContent,
   CardActionArea,
   Box,
+  Chip,
 } from "@mui/material";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const handleNavigation = (id: string) => {
-    if (id === "dsa") {
-      navigate("/dsa");
-    } else {
-      navigate(`/topic/${id}`);
-    }
+    if (id === "dsa") navigate("/dsa");
+    else navigate(`/topic/${id}`);
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
-      {/* Header */}
-      <Box textAlign="center" mb={6}>
-        <Typography variant="h3" fontWeight="bold" gutterBottom>
-           Learning Hub
-        </Typography>
-        <Typography variant="h6" color="text.secondary">
-          Master React, TypeScript & DSA with structured learning
-        </Typography>
-      </Box>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #eef2ff, #f8fafc)",
+        py: 8,
+      }}
+    >
+      <Container maxWidth="lg">
+        {/* Header */}
+        <Box textAlign="center" mb={8}>
+          <Typography variant="h3" fontWeight="bold">
+            🚀 Learning Hub
+          </Typography>
 
-      {/* Cards using Flex */}
-      <Box
-        display="flex"
-        flexWrap="wrap"
-        gap={3}
-        justifyContent="center"
-      >
-        {topics.map((topic) => (
-          <Box
-            key={topic.id}
-            sx={{
-              width: {
-                xs: "100%",
-                sm: "45%",
-                md: "30%",
-              },
-            }}
-          >
+          <Typography mt={2} color="text.secondary">
+            Master React, TypeScript & DSA with structured learning
+          </Typography>
+
+          <Chip label="Frontend Mastery System" sx={{ mt: 2 }} />
+        </Box>
+
+        {/* Cards */}
+        <Box
+          display="grid"
+          gridTemplateColumns={{
+            xs: "1fr",
+            sm: "1fr 1fr",
+            md: "1fr 1fr 1fr",
+          }}
+          gap={4}
+        >
+          {topics.map((topic) => (
             <Card
-              elevation={3}
+              key={topic.id}
               sx={{
-                borderRadius: 3,
+                borderRadius: 4,
                 transition: "0.3s",
+                background: "#fff",
                 "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: 6,
+                  transform: "translateY(-8px)",
+                  boxShadow: 8,
                 },
               }}
             >
               <CardActionArea onClick={() => handleNavigation(topic.id)}>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom>
+                <CardContent sx={{ p: 4 }}>
+                  <Typography variant="h5" fontWeight="bold">
                     {topic.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+
+                  <Typography mt={1} color="text.secondary">
                     {topic.description}
                   </Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
-          </Box>
-        ))}
-      </Box>
-    </Container>
+          ))}
+        </Box>
+      </Container>
+    </Box>
   );
 };
 
