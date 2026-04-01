@@ -7,8 +7,12 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  InputAdornment,
+  Chip,
+  Paper,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SearchIcon from "@mui/icons-material/Search";
 
 // Components
 import Counter from "../components/learning/react/useState/Counter";
@@ -32,10 +36,11 @@ const Topic = () => {
       title: "useState",
       content: (
         <>
-          <Typography>• Manages state</Typography>
-          <Typography>• Async updates</Typography>
+          <Typography variant="body2" color="text.secondary">
+            Manages component state and supports functional updates.
+          </Typography>
 
-          <Box mt={2}>
+          <Box mt={3} display="flex" flexDirection="column" gap={3}>
             <Counter />
             <InputBox />
             <User />
@@ -47,18 +52,22 @@ const Topic = () => {
       title: "Props",
       content: (
         <>
-          <Typography>• Parent → Child data</Typography>
-          <Typography>• Immutable</Typography>
+          <Typography variant="body2" color="text.secondary">
+            Used for passing data from parent to child components.
+          </Typography>
 
-          <Box mt={2}>
+          <Box mt={3} display="flex" flexDirection="column" gap={3}>
             <Profile name="Shahbaz" age={22} />
+
             <ButtonExample
-              label="Click"
+              label="Click Me"
               onClick={() => alert("Clicked")}
             />
+
             <CardWrapper>
               <Typography>Children prop content</Typography>
             </CardWrapper>
+
             <PropDrilling />
           </Box>
         </>
@@ -68,10 +77,11 @@ const Topic = () => {
       title: "useEffect",
       content: (
         <>
-          <Typography>• Side effects</Typography>
-          <Typography>• Dependency array</Typography>
+          <Typography variant="body2" color="text.secondary">
+            Handles side effects like API calls, timers, and subscriptions.
+          </Typography>
 
-          <Box mt={2}>
+          <Box mt={3} display="flex" flexDirection="column" gap={3}>
             <Timer />
             <ApiFetch />
             <InfiniteLoop />
@@ -87,36 +97,96 @@ const Topic = () => {
   );
 
   return (
-    <Box sx={{ minHeight: "100vh", background: "#f8fafc", py: 6 }}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        background: (theme) => theme.palette.background.default,
+        py: 6,
+      }}
+    >
       <Container maxWidth="md">
-        <Typography variant="h3" fontWeight="bold" mb={4}>
-          React Learning
-        </Typography>
+        
+        {/* 🔥 Header */}
+        <Box mb={5}>
+          <Typography variant="h3" fontWeight="bold">
+            React Learning
+          </Typography>
+
+          <Typography color="text.secondary" mt={1}>
+            Structured notes, examples, and revision system
+          </Typography>
+
+          <Chip
+            label="Core Concepts"
+            sx={{ mt: 2 }}
+          />
+        </Box>
 
         {/* 🔍 Search */}
         <TextField
           fullWidth
-          label="Search topic..."
+          placeholder="Search topics..."
           variant="outlined"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           sx={{ mb: 4 }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
         />
 
         {/* 📂 Accordions */}
         {filteredTopics.map((topic, index) => (
-          <Accordion key={index} sx={{ mb: 2, borderRadius: 2 }}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography fontWeight="bold">
+          <Accordion
+            key={index}
+            sx={{
+              mb: 2,
+              borderRadius: 3,
+              background: (theme) => theme.palette.background.paper,
+              border: (theme) => `1px solid ${theme.palette.divider}`,
+              "&:before": { display: "none" },
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              sx={{
+                px: 3,
+                py: 1,
+              }}
+            >
+              <Typography fontWeight="bold" variant="h6">
                 {topic.title}
               </Typography>
             </AccordionSummary>
 
             <AccordionDetails>
-              {topic.content}
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 3,
+                  borderRadius: 2,
+                  background: (theme) =>
+                    theme.palette.mode === "dark"
+                      ? "rgba(255,255,255,0.03)"
+                      : "#f9fafb",
+                }}
+              >
+                {topic.content}
+              </Paper>
             </AccordionDetails>
           </Accordion>
         ))}
+
+        {/* ❌ No Result */}
+        {filteredTopics.length === 0 && (
+          <Typography textAlign="center" mt={4} color="text.secondary">
+            No topics found...
+          </Typography>
+        )}
       </Container>
     </Box>
   );

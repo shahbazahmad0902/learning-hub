@@ -13,9 +13,12 @@ import {
   Toolbar,
 } from "@mui/material";
 import { useAuth } from "../hooks/useAuth";
+import { useTheme } from "../hooks/useTheme";
 
 const Home = () => {
   const { user, login, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
+
   const navigate = useNavigate();
 
   const handleNavigation = (id: string) => {
@@ -24,19 +27,31 @@ const Home = () => {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh", background: "#f8fafc" }}>
-      
+    <Box
+      sx={{
+        minHeight: "100vh",
+        background: (theme) => theme.palette.background.default,
+      }}
+    >
       {/* 🔥 NAVBAR */}
-      <AppBar position="static" elevation={0} sx={{ background: "#fff", color: "#000" }}>
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{
+          background: (theme) => theme.palette.background.paper,
+          color: (theme) => theme.palette.text.primary,
+        }}
+      >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          
           <Typography fontWeight="bold">Learning Hub</Typography>
+
+          <Button variant="outlined" onClick={toggleTheme}>
+            {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+          </Button>
 
           {user ? (
             <Box display="flex" alignItems="center" gap={2}>
-              <Typography variant="body2">
-                👋 {user.name}
-              </Typography>
+              <Typography variant="body2">👋 {user.name}</Typography>
               <Button variant="outlined" onClick={logout}>
                 Logout
               </Button>
@@ -80,7 +95,6 @@ const Home = () => {
 
       {/* 🔥 CONTENT */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
-        
         {/* Section Title */}
         <Typography variant="h5" fontWeight="bold" mb={4}>
           📚 Explore Topics
@@ -102,17 +116,12 @@ const Home = () => {
               sx={{
                 borderRadius: 4,
                 transition: "0.3s",
-                background: "#fff",
-                border: "1px solid #eee",
-                "&:hover": {
-                  transform: "translateY(-8px)",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                },
+                background: (theme) => theme.palette.background.paper,
+                border: (theme) => `1px solid ${theme.palette.divider}`,
               }}
             >
               <CardActionArea onClick={() => handleNavigation(topic.id)}>
                 <CardContent sx={{ p: 4 }}>
-                  
                   <Typography variant="h6" fontWeight="bold">
                     {topic.title}
                   </Typography>
@@ -122,11 +131,8 @@ const Home = () => {
                   </Typography>
 
                   <Box mt={3}>
-                    <Button size="small">
-                      Explore →
-                    </Button>
+                    <Button size="small">Explore →</Button>
                   </Box>
-
                 </CardContent>
               </CardActionArea>
             </Card>
