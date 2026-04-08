@@ -185,7 +185,8 @@ const Topic = () => {
         {filteredTopics.length === 0 && (
           <Typography textAlign="center" mt={4} color="text.secondary">
             No topics found...
-            shahbaz ahmad working on learning hub live 
+            shahbaz ahmad working on learning hub live stream
+              java script react next js node js dsa system design interview preparation
           </Typography>
         )}
       </Container>
