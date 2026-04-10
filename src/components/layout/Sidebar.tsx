@@ -15,7 +15,7 @@ const Sidebar = () => {
     >
       <Typography fontWeight="bold" mb={3}>
         🚀 Learning Hub
-        this is sidear amd it is used to navigate between different topics and sections of the learning hub. It provides quick access to various resources and materials related to programming, data structures, algorithms, and more. The sidebar is designed to enhance the user experience by allowing easy navigation and organization of content within the learning platform.
+        this is sidear amd 
       </Typography>
 
       <Button fullWidth onClick={() => navigate("/")}>
