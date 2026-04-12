@@ -15,7 +15,7 @@ const Sidebar = () => {
     >
       <Typography fontWeight="bold" mb={3}>
         🚀 Learning Hub
-        the lea rning hub is a platform that provides resources and tools for learning and development. It offers a wide range of courses, tutorials, and materials to help individuals enhance their skills and knowledge in various subjects. Whether you're looking to learn a new programming language, improve your design skills, or explore new technologies, the learning hub has something for everyone. With its user-friendly interface and comprehensive content, it's the perfect place to start your learning journey.
+        the lea 
       </Typography>
 
       <Button fullWidth onClick={() => navigate("/")}>
