@@ -15,7 +15,8 @@ const Sidebar = () => {
     >
       <Typography fontWeight="bold" mb={3}>
         🚀 Learning Hub 
-        just a place to learn and grow together!
+        just a place to learn and grow together! 
+        start your learning journey with us and explore a wide range of topics, from programming languages to data structures and algorithms.
       </Typography>
 
       <Button fullWidth onClick={() => navigate("/")}>
