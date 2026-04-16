@@ -16,6 +16,7 @@ const Sidebar = () => {
       <Typography fontWeight="bold" mb={3}>
         🚀 Learning Hub  
         there are many resources available to learn and practice DSA and React.
+        where you can find tutorials, articles, and coding challenges to enhance your skills.
       </Typography>
 
       <Button fullWidth onClick={() => navigate("/")}>
