@@ -14,7 +14,7 @@ const Sidebar = () => {
       }}
     >
       <Typography fontWeight="bold" mb={3}>
-        🚀 Learning Hub  asdasdasdadsadsadsadsadsadsadsad
+        🚀 Learning Hub  
         ssssdsffgfdgfgdsgdfgd
       </Typography>
 
