@@ -45,7 +45,6 @@ const Navbar = () => {
                     Login   
                     shared by <strong>John Doe</strong>
                     and <strong>Jane Smith</strong>
-                    so 
                   </Button>
                 )}
               </Toolbar>
