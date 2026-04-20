@@ -44,6 +44,7 @@ const Navbar = () => {
                   <Button variant="contained" onClick={login}>
                     Login   
                     shared by <strong>John Doe</strong>
+                    and <strong>Jane Smith</strong>
                   </Button>
                 )}
               </Toolbar>
