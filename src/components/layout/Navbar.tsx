@@ -46,7 +46,7 @@ const Navbar = () => {
                     s
                   </Button>
                 )}
-              </Toolbar>z
+              </Toolbar>
             </AppBar>
     </Box>
   );
