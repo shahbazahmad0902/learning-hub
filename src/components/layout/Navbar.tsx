@@ -42,10 +42,11 @@ const Navbar = () => {
                   </Box>
                 ) : (
                   <Button variant="contained" onClick={login}>
-                    Login 
+                    Login   
+                    s
                   </Button>
                 )}
-              </Toolbar>
+              </Toolbar>z
             </AppBar>
     </Box>
   );
