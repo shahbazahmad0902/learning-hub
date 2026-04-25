@@ -42,7 +42,7 @@ const Navbar = () => {
                   </Box>
                 ) : (
                   <Button variant="contained" onClick={login}>
-                    Login   afasasfasfasf
+                    Login 
                   </Button>
                 )}
               </Toolbar>
