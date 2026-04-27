@@ -43,7 +43,6 @@ const Navbar = () => {
                 ) : (
                   <Button variant="contained" onClick={login}>
                     Login   
-                    ar
                   </Button>
                 )}
               </Toolbar>
