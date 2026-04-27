@@ -41,7 +41,7 @@ const Home = () => {
         <Container>
           <Typography variant="h3" fontWeight="bold">
             🚀 Learning Hub 
-            ssdsadasd
+            ssdsadasdasdadasdasd
           </Typography>
 
           <Typography mt={2} sx={{ opacity: 0.9 }}>
