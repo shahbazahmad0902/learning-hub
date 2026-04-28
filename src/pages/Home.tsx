@@ -65,7 +65,7 @@ const Home = () => {
           📚 Explore Topics
           dgfdgsdgggdgfghfhfghfghAdadasdsadsadfsdafsda
         </Typography>
-asfdsadfsadfsdaf
+
         {/* Cards */}
         <Box
           display="grid"
