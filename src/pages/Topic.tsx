@@ -186,6 +186,7 @@ const Topic = () => {
           <Typography textAlign="center" mt={4} color="text.secondary">
             No topics found...
             aesfasfasf
+            the
           </Typography>
         )}
       </Container>
