@@ -185,7 +185,6 @@ const Topic = () => {
         {filteredTopics.length === 0 && (
           <Typography textAlign="center" mt={4} color="text.secondary">
             No topics found...
-            a
           </Typography>
         )}
       </Container>
