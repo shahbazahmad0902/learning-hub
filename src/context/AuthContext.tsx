@@ -6,7 +6,7 @@ import type { User } from "../types/user.types";
 type AuthContextType = {
   user: User | null;
   login: () => void;
-  logout: () => void;
+  logout: () => void;fsdfsdfsdfsdf
 };
 
 export const AuthContext = createContext<AuthContextType | null>(null);
