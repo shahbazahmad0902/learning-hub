@@ -15,8 +15,7 @@ const Sidebar = () => {
     >
       <Typography fontWeight="bold" mb={3}>
         🚀 Learning Hub  dsfdsfsddsfsasasasasasasasas
-        afasafadadsdsdsdsasdasdasdasdasdasdsaasdsadasada
-        
+        afasafadadsdsdsdsasdasdasdasdasdasdsa
       </Typography>
 
       <Button fullWidth onClick={() => navigate("/")}>
