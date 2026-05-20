@@ -159,7 +159,7 @@ const Topic = () => {
               }}
             >
               <Typography fontWeight="bold" variant="h6">
-                {topic.title}dsadsadsdsadwqewqeeqweqwe
+                {topic.title}
               </Typography>
             </AccordionSummary>
 
