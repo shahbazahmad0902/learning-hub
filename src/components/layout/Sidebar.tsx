@@ -22,7 +22,7 @@ const Sidebar = () => {
       </Button>
 
       <Button fullWidth onClick={() => navigate("/topic/react")}>
-        React
+        Reactdsadsadsadasdsad
       </Button>
 
       <Button fullWidth onClick={() => navigate("/dsa")}>
