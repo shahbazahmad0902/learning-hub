@@ -18,7 +18,7 @@ const Sidebar = () => {
       </Typography>
 
       <Button fullWidth onClick={() => navigate("/")}>
-        Home
+        Homedasdasdsadsadsad
       </Button>
 
       <Button fullWidth onClick={() => navigate("/topic/react")}>
