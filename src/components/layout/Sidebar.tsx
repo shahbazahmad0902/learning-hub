@@ -26,7 +26,7 @@ const Sidebar = () => {
       </Button>
 
       <Button fullWidth onClick={() => navigate("/dsa")}>
-        DSAdsadsadsadsa
+        DSA
       </Button>
     </Box>
   );
