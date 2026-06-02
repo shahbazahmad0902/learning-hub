@@ -12,6 +12,6 @@ export const dsaTopics = [
   {
     id: "recursion",
     title: "Recursion",
-    problems: ["Fibonacci", "FactoriaASasASAsasASsASXzZxzxXzxZXZxzxASDADADS
+    problems: ["Fibonacci", "FactoriaASasASAsasASsAS"],
   },
 ];
