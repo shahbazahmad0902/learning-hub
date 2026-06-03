@@ -3,7 +3,7 @@ import { dsaTopics } from "../data/dsa";
 const DSA = () => {
   return (
     <div style={{ padding: "20px" }}>
-      <h1>🧠 DSA Practice</h1>sdasdsadasdas
+      <h1>🧠 DSA Practice</h1>sdasdsadasdasasdsadasdsadsad
 
       {dsaTopics.map((topic) => (
         <div key={topic.id} style={{ marginBottom: "20px" }}>
