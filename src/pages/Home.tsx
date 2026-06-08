@@ -61,8 +61,8 @@ const Home = () => {
       {/* 🔥 CONTENT */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         {/* Section Title */}
-        <Typography variant="h5" fontWeight="bold" mb={4}>daasddsa
-          📚 Explore TopicsasdsdsaddasdsdasddsadasadsadsadasdsaddsadasdsdsaaSASAsAS
+        <Typography variant="h5" fontWeight="bold" mb={4}>
+          📚 Explore Topicsasdsdsaddasdsdasddsadasadsadsadasdsaddsa
         </Typography>
 
         {/* Cards */}
