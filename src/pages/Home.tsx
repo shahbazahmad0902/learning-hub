@@ -61,7 +61,7 @@ const Home = () => {
       {/* 🔥 CONTENT */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         {/* Section Title */}
-        <Typography variant="h5" fontWeight="bold" mb={4}>
+        <Typography variant="h5" fontWeight="bold" mb={4}>daasddsa
           📚 Explore Topicsasdsdsaddasdsdasddsadasadsadsadasdsaddsadasdsdsa
         </Typography>
 
