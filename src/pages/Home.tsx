@@ -62,7 +62,7 @@ const Home = () => {
       <Container maxWidth="lg" sx={{ py: 8 }}>
         {/* Section Title */}
         <Typography variant="h5" fontWeight="bold" mb={4}>
-          📚 Explore Topicssdsadsadaasddadsaddasdsadasd qw  qw  qwq wqeqwewqewqeqwewqeqeqwwqqeqweqweqweqweqeqewqeqwe
+          📚 Explore Topicssdsadsadaasddadsaddasdsadasd qw  qw  qwq wqeqwewqewqeqwewqeqeqwwqqeqweqweqweqweqeqewqeqweqewqeqweqwewq
         </Typography>
 
         {/* Cards */}
