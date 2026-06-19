@@ -63,7 +63,7 @@ const Home = () => {
         {/* Section Title */}
         <Typography variant="h5" fontWeight="bold" mb={4}>
           📚 Explore Topicssadsadsaasdasdasd
-        </Typography>
+        </Typography>asdas
 
         {/* Cards */}
         <Box
