@@ -184,7 +184,7 @@ const Topic = () => {
         {/* ❌ No Result */}
         {filteredTopics.length === 0 && (
           <Typography textAlign="center" mt={4} color="text.secondary">
-            No topics found...asdsadasdsdsrrttrsASASsAASSAD
+            No topics found...asdsadasdsdsrrttrsASA
           </Typography>
         )}
       </Container>
